@@ -1,0 +1,49 @@
+.headerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.appLogo > img {
+    width: 136px;
+    height: 120px
+}
+
+.navList {
+    font-size: 10px;
+}
+
+.navList > ul {
+    display: flex;
+    font-size: 26px;
+    list-style: none;
+   
+}
+
+.navList > ul > li {
+    padding-left: 30px;
+    margin-right: 10px;
+}
+.searchBar{
+    margin: 10px 0;
+}
+
+
+.resCard {
+    background-color: aqua;
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black
+}
+
+.resCard > div> img {
+    width: 207px;
+    height: 201px;
+}
+
+.resSection {
+    display: flex;
+    flex-wrap: wrap;
+}
