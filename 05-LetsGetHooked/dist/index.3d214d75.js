@@ -27366,7 +27366,7 @@ const BodySection = ()=>{
                             className: "TopRatedBTN",
                             onClick: ()=>{
                                 const filterList = resList.filter((res)=>{
-                                    return res.info.avgRating > 4;
+                                    return res.info.avgRating > 4.3;
                                 });
                                 setCopyList(filterList);
                             },
@@ -27392,12 +27392,12 @@ const BodySection = ()=>{
                     resData: copyList
                 }, void 0, false, {
                     fileName: "src/components/BodySection.js",
-                    lineNumber: 51,
+                    lineNumber: 52,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/BodySection.js",
-                lineNumber: 50,
+                lineNumber: 51,
                 columnNumber: 13
             }, undefined)
         ]

@@ -41,7 +41,8 @@ const BodySection = () => {
             <div className="TopRated">
                 <button className="TopRatedBTN" onClick={()=>{
                    const filterList =  resList.filter((res)=>{
-                      return res.info.avgRating > 4
+                   
+                      return res.info.avgRating > 4.3
                     })
                         setCopyList(filterList)
                 }}>Top Rated Restaurant</button>
