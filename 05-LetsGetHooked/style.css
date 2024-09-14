@@ -62,3 +62,18 @@
     background-color: aqua;
     border-radius: 5px;
 }
+
+.shimmerUi {
+    background-color: #f0f0f0;
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    height: 400px;
+    width: 200px;
+}
+
+.shimmer {
+    display: flex;
+    flex-wrap: wrap;
+}

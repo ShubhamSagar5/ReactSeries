@@ -1,22 +1,34 @@
 import { resData } from "../utility/resData"
+import ShimmerUI from "../utility/ShimmerUI"
 import ResSection from "./ResSection"
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 const BodySection = () => {
     
 
-    const [resList,setResList] = useState(resData)
+    const [resList,setResList] = useState([])
     const [copyList,setCopyList] = useState(resData) 
     const [searchText,setSearchText] = useState('')
 
     const handleSearch = () => {
-        const searchList = copyList.filter((res)=>{
+        const searchList = resList.filter((res)=>{
             return res.info.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())
         })
         setCopyList(searchList)
     }
+
+    const fetchData = async() => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.9974533&lng=73.78980229999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const resData = await data.json() 
+        setResList(resData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+        setCopyList(resData.data.cards[4].card.card.gridElements.infoWithStyle.restaurants)
+    }
     
-    return (
+    useEffect(()=>{
+        fetchData()
+    },[])
+
+    return resList.length === 0 ? <ShimmerUI/> :  (
         <div className="bodySection">
             <div className="functionality">
             <div className="searchBar">
@@ -28,7 +40,7 @@ const BodySection = () => {
             </div>
             <div className="TopRated">
                 <button className="TopRatedBTN" onClick={()=>{
-                   const filterList =  copyList.filter((res)=>{
+                   const filterList =  resList.filter((res)=>{
                       return res.info.avgRating > 4
                     })
                         setCopyList(filterList)
