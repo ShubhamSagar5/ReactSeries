@@ -6,8 +6,8 @@
 }
 
 .appLogo > img {
-    width: 136px;
-    height: 120px
+    width: 126px;
+    height: 100px
 }
 
 .navList {
@@ -16,7 +16,9 @@
 
 .navList > ul {
     display: flex;
-    font-size: 26px;
+    font-size: 25px;
+    padding-left: 30px;
+    margin-right: 10px;
     list-style: none;
    
 }
@@ -76,4 +78,11 @@
 .shimmer {
     display: flex;
     flex-wrap: wrap;
+}
+Link{
+    margin-right: 5px;
+}
+
+.logoutBTN {
+    margin-left: 10px;
 }

@@ -1,4 +1,18 @@
+import { useState } from "react"
+import { Link } from "react-router-dom"
+
 const HeaderSection = () => {
+    
+    const [LogIn,setLogIn] = useState(true)
+    
+    const handleLogOut = () => {
+        if(LogIn){
+            setLogIn(false)
+        }else{
+            setLogIn(true)
+        }
+    }
+
     return (
         <div className="headerSection">
             <div className="appLogo">
@@ -6,10 +20,12 @@ const HeaderSection = () => {
             </div>
             <div className="navList">
                 <ul>
-                    <li>Home</li>
-                    <li>Contact Us</li>
-                    <li>AboutUs</li>
-                    <li>Cart</li>
+                    <Link to={"/"}><li>Home</li></Link>
+                    <Link><li>Contact Us</li></Link>
+                    <Link to={"/about"}><li>AboutUs</li></Link>
+                    <Link><li>Cart</li></Link>
+                    <button className="logoutBTN" onClick={handleLogOut}>{LogIn ? "Login" : "LogOut"}</button>
+                    {console.log(LogIn)}
                 </ul>
             </div>
         </div>

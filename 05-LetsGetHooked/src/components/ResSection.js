@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom"
 import RestaurantCard from "./RestaurantCard"
 
 const ResSection = ({resData}) => {
@@ -7,7 +8,7 @@ const ResSection = ({resData}) => {
         {
             resData.map((resData)=>{
                 return (
-                    <RestaurantCard key={resData.info.id} resData={resData}/>
+                    <Link key={resData.info.id} to={"restaurantMenu/"+ resData.info.id}><RestaurantCard  resData={resData}/></Link>
                 )
             })
         }
