@@ -86,3 +86,15 @@ Link{
 .logoutBTN {
     margin-left: 10px;
 }
+
+.github {
+    display: flex;
+    align-items: center;
+   column-gap: 80px;
+    margin-top: 10px;
+}
+
+.github > img {
+    width: 170px;
+    height: 139px;
+}

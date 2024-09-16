@@ -83,4 +83,16 @@ Link {
 .logoutBTN {
   margin-left: 10px;
 }
+
+.github {
+  align-items: center;
+  column-gap: 80px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.github > img {
+  width: 170px;
+  height: 139px;
+}
 /*# sourceMappingURL=index.3a01df49.css.map */

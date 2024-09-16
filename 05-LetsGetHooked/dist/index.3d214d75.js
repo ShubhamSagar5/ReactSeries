@@ -36032,26 +36032,127 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const AboutUs = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "About US"
-    }, void 0, false, {
-        fileName: "src/components/AboutUs.js",
-        lineNumber: 3,
-        columnNumber: 9
-    }, undefined);
-};
-_c = AboutUs;
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _profile = require("./Profile");
+var _profileDefault = parcelHelpers.interopDefault(_profile);
+class AboutUs extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+    }
+    render() {
+        this.state = {};
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    children: "My Profile"
+                }, void 0, false, {
+                    fileName: "src/components/AboutUs.js",
+                    lineNumber: 20,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileDefault.default), {
+                    name: "Hari",
+                    Address: "Nashik"
+                }, void 0, false, {
+                    fileName: "src/components/AboutUs.js",
+                    lineNumber: 21,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "src/components/AboutUs.js",
+            lineNumber: 19,
+            columnNumber: 13
+        }, this);
+    }
+}
 exports.default = AboutUs;
-var _c;
-$RefreshReg$(_c, "AboutUs");
 
   $parcel$ReactRefreshHelpers$7fe6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Profile":"h0rtF"}],"h0rtF":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b52a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b52a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+class Profile extends (0, _reactDefault.default).Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            count: 0,
+            count2: 5,
+            user: []
+        };
+    }
+    async componentDidMount() {
+        this.data = await fetch("https://api.github.com/users");
+        this.json = await this.data.json();
+        this.setState({
+            user: this.json
+        });
+        this.timer = setInterval(()=>{
+            console.log("Hello");
+        }, 1000);
+    }
+    componentWillUnmount() {
+        clearInterval(this.timer);
+    }
+    render() {
+        console.log(this.state.user);
+        const { name } = this.props;
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            children: this.state.user.map((user)=>{
+                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "github",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                            children: user.login
+                        }, void 0, false, {
+                            fileName: "src/components/Profile.js",
+                            lineNumber: 64,
+                            columnNumber: 33
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            src: user.avatar_url,
+                            alt: ""
+                        }, void 0, false, {
+                            fileName: "src/components/Profile.js",
+                            lineNumber: 65,
+                            columnNumber: 33
+                        }, this)
+                    ]
+                }, user.id, true, {
+                    fileName: "src/components/Profile.js",
+                    lineNumber: 63,
+                    columnNumber: 29
+                }, this);
+            })
+        }, void 0, false, {
+            fileName: "src/components/Profile.js",
+            lineNumber: 42,
+            columnNumber: 13
+        }, this);
+    }
+}
+exports.default = Profile;
+
+  $parcel$ReactRefreshHelpers$b52a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8PuJ6":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
