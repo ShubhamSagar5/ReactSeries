@@ -1,5 +1,7 @@
 import { resData } from "../utility/resData"
 import ShimmerUI from "../utility/ShimmerUI"
+import useOnlineStatus from "../utility/useOnlineStatus"
+import OnlineStatus from "./OnlineStatus"
 import ResSection from "./ResSection"
 import {useEffect, useState} from 'react'
 
@@ -9,6 +11,9 @@ const BodySection = () => {
     const [resList,setResList] = useState([])
     const [copyList,setCopyList] = useState(resData) 
     const [searchText,setSearchText] = useState('')
+
+    const onlineStatus = useOnlineStatus()
+    console.log(onlineStatus)
 
     const handleSearch = () => {
         const searchList = resList.filter((res)=>{
@@ -27,6 +32,10 @@ const BodySection = () => {
     useEffect(()=>{
         fetchData()
     },[])
+
+    if(onlineStatus === false){
+        return <OnlineStatus/>
+    }
 
     return resList.length === 0 ? <ShimmerUI/> :  (
         <div className="bodySection">
