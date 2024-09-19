@@ -20,15 +20,15 @@ const HeaderSection = () => {
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdaMYtVi9_tfNcpsbGGseU6ehYgV9UeU3h7A&s" alt="" />
             </div>
             <div className="navList">
-                <ul>
+                <ul className="gap-3">
                     <li>OnlineStatus : {onlineStatus ? "🟢" : "🔴"} </li>
                     <Link to={"/"}><li>Home</li></Link>
-                    <Link><li>Contact Us</li></Link>
+                    <Link><li>ContactUs</li></Link>
                     <Link to={"/about"}><li>AboutUs</li></Link>
                     <Link to={"/grocery"}><li>Grocery</li></Link>
                     <Link><li>Cart</li></Link>
                     <button className="logoutBTN" onClick={handleLogOut}>{LogIn ? "Login" : "LogOut"}</button>
-                    {console.log(LogIn)}
+                    
                 </ul>
             </div>
         </div>

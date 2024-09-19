@@ -13,7 +13,6 @@ const BodySection = () => {
     const [searchText,setSearchText] = useState('')
 
     const onlineStatus = useOnlineStatus()
-    console.log(onlineStatus)
 
     const handleSearch = () => {
         const searchList = resList.filter((res)=>{
@@ -42,13 +41,13 @@ const BodySection = () => {
             <div className="functionality">
             <div className="searchBar">
                 {/* search bar */}
-                <input type="text" name="" id="" placeholder="Search Restaurant" value={searchText} onChange={(e)=>{
+                <input className="mx-3 my-2 border border-black rounded-lg px-1" type="text" name="" id="" placeholder="Search Restaurant" value={searchText} onChange={(e)=>{
                     setSearchText(e.target.value)
                 }} />
-                <button className=""onClick={handleSearch} >Search</button>
+                <button className="bg-cyan-300 p-1 my-2 rounded-lg" onClick={handleSearch} >Search</button>
             </div>
             <div className="TopRated">
-                <button className="TopRatedBTN" onClick={()=>{
+                <button className="mx-5 rounded-lg my-2 p-1 bg-cyan-300" onClick={()=>{
                    const filterList =  resList.filter((res)=>{
                    
                       return res.info.avgRating > 4.3
@@ -60,6 +59,7 @@ const BodySection = () => {
             <div>
             <ResSection resData={copyList}/>
             </div>
+
         </div>
     )
 } 

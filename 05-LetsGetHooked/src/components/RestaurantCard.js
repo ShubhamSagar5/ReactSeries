@@ -14,4 +14,18 @@ const RestaurantCard = ({resData}) => {
     )
 }
 
-export default RestaurantCard
+export default RestaurantCard 
+
+
+
+export const VegHotel = (RestaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute bg-black px-2 py-1 rounded-lg text-white">Veg</label>
+                <RestaurantCard {...props}/>
+            </div>
+        )
+    }
+}
+
