@@ -1,15 +1,31 @@
-import React, {lazy, Suspense } from "react"
+import React, {lazy, Suspense, useEffect, useState } from "react"
 import ReactDom from "react-dom/client"
 import MainSection from "./src/components/MainSection"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import BodySection from "./src/components/BodySection"
 import RestaurantMenu from "./src/components/RestaurantMenu"
+import UserContext from "./src/utility/UserContext"
 
 const App = () => {
+    
+    
+    const [loginUser,setLoginUser] = useState()
+
+    useEffect(()=>{
+        const data = {
+            name:"Hari"
+        }
+        setLoginUser(data.name)
+
+    },[])
+    
     return (
-        <div>
+        <UserContext.Provider value={{LoginUser:loginUser,handleLogin:setLoginUser}}>
+            <div>
             <MainSection/>
         </div>
+        </UserContext.Provider>
+        
     )
 }
 

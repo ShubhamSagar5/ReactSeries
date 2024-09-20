@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Link } from "react-router-dom"
 import useOnlineStatus from "../utility/useOnlineStatus"
+import UserContext from "../utility/UserContext"
 
 const HeaderSection = () => {
     
     const [LogIn,setLogIn] = useState(true)
+    
     const onlineStatus = useOnlineStatus()
+
+    const {LoginUser} = useContext(UserContext)
+
     const handleLogOut = () => {
         if(LogIn){
             setLogIn(false)
@@ -27,6 +32,7 @@ const HeaderSection = () => {
                     <Link to={"/about"}><li>AboutUs</li></Link>
                     <Link to={"/grocery"}><li>Grocery</li></Link>
                     <Link><li>Cart</li></Link>
+                    <li>{LoginUser}</li>
                     <button className="logoutBTN" onClick={handleLogOut}>{LogIn ? "Login" : "LogOut"}</button>
                     
                 </ul>

@@ -1,9 +1,10 @@
 import { resData } from "../utility/resData"
 import ShimmerUI from "../utility/ShimmerUI"
 import useOnlineStatus from "../utility/useOnlineStatus"
+import UserContext from "../utility/UserContext"
 import OnlineStatus from "./OnlineStatus"
 import ResSection from "./ResSection"
-import {useEffect, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 
 const BodySection = () => {
     
@@ -13,6 +14,12 @@ const BodySection = () => {
     const [searchText,setSearchText] = useState('')
 
     const onlineStatus = useOnlineStatus()
+    const {LoginUser,handleLogin} = useContext(UserContext)
+
+
+    const handleLoginUserName = () => {
+
+    }
 
     const handleSearch = () => {
         const searchList = resList.filter((res)=>{
@@ -54,6 +61,10 @@ const BodySection = () => {
                     })
                         setCopyList(filterList)
                 }}>Top Rated Restaurant</button>
+            </div>
+            <div className="my-5 flex gap-2">
+                <label htmlFor="userName">Login Name</label>
+                <input className="border border-black rounded-lg"  type="text" name="" id="userName" value={LoginUser} onChange={(e)=>{handleLogin(e.target.value)}} />
             </div>
             </div>
             <div>

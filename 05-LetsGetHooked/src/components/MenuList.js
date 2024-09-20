@@ -18,7 +18,7 @@ const MenuList = ({ data }) => {
               <div className="flex justify-between text-2xl font-semibold">
                  <div>{card?.card?.card?.title} ({card?.card?.card?.itemCards.length})</div>
               <div>
-                🔻
+              {activeIndex === index ? '🔼' : '🔻'}  
               </div>
               </div>
               

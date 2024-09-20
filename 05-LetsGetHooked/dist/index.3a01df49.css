@@ -286,6 +286,16 @@ img, video {
   margin-bottom: 1.25rem;
 }
 
+.my-3 {
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 .flex {
   display: flex;
 }
@@ -302,6 +312,10 @@ img, video {
   width: 140px;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .justify-between {
   justify-content: space-between;
 }
@@ -314,12 +328,28 @@ img, video {
   gap: 1rem;
 }
 
+.gap-2 {
+  gap: .5rem;
+}
+
 .rounded-lg {
   border-radius: .5rem;
 }
 
 .border {
   border-width: 1px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-b-4 {
+  border-bottom-width: 4px;
 }
 
 .border-black {
