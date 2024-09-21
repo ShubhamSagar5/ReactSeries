@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux"
 import { resData } from "../utility/resData"
 import ShimmerUI from "../utility/ShimmerUI"
 import useOnlineStatus from "../utility/useOnlineStatus"
@@ -9,6 +10,7 @@ import {useContext, useEffect, useState} from 'react'
 const BodySection = () => {
     
 
+
     const [resList,setResList] = useState([])
     const [copyList,setCopyList] = useState(resData) 
     const [searchText,setSearchText] = useState('')
@@ -17,10 +19,7 @@ const BodySection = () => {
     const {LoginUser,handleLogin} = useContext(UserContext)
 
 
-    const handleLoginUserName = () => {
-
-    }
-
+   
     const handleSearch = () => {
         const searchList = resList.filter((res)=>{
             return res.info.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase())

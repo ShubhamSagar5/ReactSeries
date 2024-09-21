@@ -14,8 +14,8 @@ const MenuList = ({ data }) => {
       <div>
         {data.map((card,index) => {
           return (
-            <div key={card?.card?.card?.title} className=" bg-gray-200 border shadow-lg my-5 p-2 rounded-lg" onClick={()=>handleShowItem(index)} >
-              <div className="flex justify-between text-2xl font-semibold">
+            <div key={card?.card?.card?.title} className=" bg-gray-200 border shadow-lg my-5 p-2 rounded-lg"  >
+              <div className="flex justify-between text-2xl font-semibold" onClick={()=>handleShowItem(index)}>
                  <div>{card?.card?.card?.title} ({card?.card?.card?.itemCards.length})</div>
               <div>
               {activeIndex === index ? '🔼' : '🔻'}  

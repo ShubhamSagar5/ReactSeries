@@ -1,7 +1,18 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utility/Slice/CartSlice";
 
 const MenuSection = ({list}) => {
-    return (
+  
+  
+  const dispatch = useDispatch()
+
+  const handleAddToCart = (menu) => {
+    
+    dispatch(addItem(menu))
+  }
+  
+  return (
   
    
       <div>
@@ -15,7 +26,7 @@ const MenuSection = ({list}) => {
               
             </div>
             <div className="p-2">
-                <button className="bg-black text-white p-1 my-0.2 rounded-lg absolute -mx-11">Add To Cart</button>
+                <button className="bg-black text-white p-1 my-0.2 rounded-lg absolute -mx-11" onClick={()=>handleAddToCart(menu)}>Add To Cart</button>
                 <div className="rounded-lg"><img className="rounded-lg w-[140px] h-[120px]" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+menu.card.info.imageId} alt="" /></div>
 
             </div>

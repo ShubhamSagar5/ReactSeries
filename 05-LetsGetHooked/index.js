@@ -5,6 +5,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import BodySection from "./src/components/BodySection"
 import RestaurantMenu from "./src/components/RestaurantMenu"
 import UserContext from "./src/utility/UserContext"
+import Cart from "./src/components/Cart"
+import { Provider } from "react-redux"
+import AppStore from "./src/utility/AppStore"
 
 const App = () => {
     
@@ -20,11 +23,14 @@ const App = () => {
     },[])
     
     return (
-        <UserContext.Provider value={{LoginUser:loginUser,handleLogin:setLoginUser}}>
+        <Provider store={AppStore}>
+             <UserContext.Provider value={{LoginUser:loginUser,handleLogin:setLoginUser}}>
             <div>
             <MainSection/>
         </div>
         </UserContext.Provider>
+        </Provider>
+       
         
     )
 }
@@ -52,6 +58,10 @@ const AppRouter = createBrowserRouter([
             {
                 path:"/grocery",
                 element:<Suspense fallback={<h2>Loading!!</h2>}><Grocery/></Suspense>
+            },
+            {
+                path:"/cart",
+                element:<Cart/>
             }
         ]
     }
